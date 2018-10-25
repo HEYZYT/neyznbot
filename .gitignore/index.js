@@ -88,4 +88,4 @@ bot.on('message', message => {
 
 bot.login(process.env.TOKEN);
 
-//  NTA0OTY2MDUzNzkzNzU5MjMz.DrMuOg.zRvCfRBobSAtiTjR5Fwcd_jSAG0
+
