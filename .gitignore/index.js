@@ -20,7 +20,7 @@ bot.on("message", message => {
             .addField(prefix + "help", "Affiche cette page")
          //   .addField(prefix + "candidature", "Affiche les Google Form disponible pour les candidature du STAFF")
             .addField(prefix + "infos", "Affiche les infos du Discord ; ex : Nom du serveur, Date de création, etc...")
-            .addField(prefix + "sondage", "Permet de faire un sondage")
+            .addField(prefix + "sondage", "Permet de faire un sondage si NeyZn a un doute")
             .setFooter("En espérant que vous passerez du bon temps sur le Discord de NeyZn")
         message.channel.sendEmbed(embed);
     }
@@ -52,14 +52,14 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(prefix + "sondage")) {
-        if(message.author.id == "356185137379016706", "404783132932571136"){
+        if(message.author.id == "472799335160086528", "404783132932571136"){
             let args = message.content.split(" ").slice(1);
             let thingToEcho = args.join(" ")
             var embed = new Discord.RichEmbed()
                 .setDescription("Sondage")
                 .addField(thingToEcho, "✅ Pour Oui | ❌ Pour Non")
                 .setFooter(`Sondage crée par ${message.author.username}`)
-            message.guild.channels.find("name", "sondages").sendEmbed(embed)
+            message.guild.channels.find("name", "sondage").sendEmbed(embed)
             .then(function (message) {
                 message.react("✅")
                 message.react("❌")
