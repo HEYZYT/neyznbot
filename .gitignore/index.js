@@ -42,29 +42,31 @@ bot.on('message', message => {
         let sicon = message.guild.iconURL;
         var embed = new Discord.RichEmbed()
         .setThumbnail(sicon)
+        .setTitle("Page d'informations 1/2")
         .setDescription('Infomations du Discord')
         .addField("Nom du Discord", message.guild.name)
         .addField("Crée le", message.guild.createdAt)
         .addField("Tu as rejoins le", message.member.joinedAt)
         .addField("Utilisateurs sur le Discord", message.guild.memberCount)
- 
+
     message.channel.sendEmbed(embed)    
     }
 
-    if (message.content.startsWith(prefix + "sondage")) {
-        if(message.author.id == "472799335160086528", "404783132932571136"){
+    if (message.content.startsWith("*sondage")) {
+        if(message.author.id == "404783132932571136", "356185137379016706"){
             let args = message.content.split(" ").slice(1);
             let thingToEcho = args.join(" ")
             var embed = new Discord.RichEmbed()
                 .setDescription("Sondage")
                 .addField(thingToEcho, "✅ Pour Oui | ❌ Pour Non")
                 .setFooter(`Sondage crée par ${message.author.username}`)
-            message.guild.channels.find("name", "sondage").sendEmbed(embed)
+            message.guild.channels.find("name", "sondages").sendEmbed(embed)
             .then(function (message) {
                 message.react("✅")
                 message.react("❌")
                 message.channel.send("@everyone")
-                console.log(`Sondage!`);
+                console.log(`${message.author.username} viens de faire un sondage !`);
+                
             })   .catch(function() {
             })
             }else{
@@ -73,6 +75,17 @@ bot.on('message', message => {
     }
 })
 
-
+bot.on('message', message => {
+  if (message.content === prefix + "infos2"){
+    let sicon = message.guild.iconURL;
+    var embed = new Discord.RichEmbed()
+    .setThumbnail(sicon)
+    .setDescription('Infomations du Discord')
+    .addField("Nom du Discord", message.guild.name)
+    message.channel.sendEmbed(embed)
+  } 
+})   
 
 bot.login(process.env.TOKEN);
+
+//  NTA0OTY2MDUzNzkzNzU5MjMz.DrMuOg.zRvCfRBobSAtiTjR5Fwcd_jSAG0
