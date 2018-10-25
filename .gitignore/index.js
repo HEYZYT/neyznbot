@@ -20,7 +20,7 @@ bot.on("message", message => {
             .addField(prefix + "help", "Affiche cette page")
          //   .addField(prefix + "candidature", "Affiche les Google Form disponible pour les candidature du STAFF")
             .addField(prefix + "infos", "Affiche les infos du Discord ; ex : Nom du serveur, Date de création, etc...")
-            .addField(prefix + "sondage", "Permet de faire un sondage"
+            .addField(prefix + "sondage", "Permet de faire un sondage si NeyZn a un doute")
             .setFooter("En espérant que vous passerez du bon temps sur le Discord de NeyZn")
         message.channel.sendEmbed(embed);
     }
