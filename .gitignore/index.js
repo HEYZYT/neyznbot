@@ -88,9 +88,7 @@ bot.on('message', message => {
 
 bot.on("message", message => {
     if (message.content === prefix + "aide")
-    let sicon = message.guild.iconURL;
     var embed = new Discord.RichEmbed()
-    .setThumbnail(sicon)
     .setDescription("Voici une page avec quelques outils pour vous aidez !")
     .addField("*contact", "- Contacter NeyZn")
     .addField("*donateur", "- Afficher les information sur le grade Donateur")
