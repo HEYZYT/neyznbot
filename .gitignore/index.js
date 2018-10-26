@@ -94,8 +94,8 @@ bot.on("message", message => {
     .addField("*donateur", "- Afficher les information sur le grade Donateur")
     .addField("*teamspeak", "- Afficher l'adresse du TeamSpeak de NeyZn")
     .addField("*twitter", "- Afficher le Twitter de NeyZn")
-    .addField("*youtube", "- Afficher la chaîne YouTube de NeyZn")
-    .addField("*neyzn", "- Afficher les informations sur le grade YouTuber")
+    .addField("*youtube", "- Afficher les informations sur le grade YouTuber")
+    .addField("*neyzn", "- Afficher la chaîne YouTube de NeyZn")
     message.channel.sendEmbed(embed)
 })
 
