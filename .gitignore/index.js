@@ -83,8 +83,23 @@ bot.on('message', message => {
     .setDescription('Infomations du Discord')
     .addField("Nom du Discord", message.guild.name)
     message.channel.sendEmbed(embed)
-  } 
-})   
+  }
+}) 
+
+bot.on("message", message => {
+    if (message.content === prefix + "aide")
+    let sicon = message.guild.iconURL;
+    var embed = new Discord.RichEmbed()
+    .setThumbnail(sicon)
+    .setDescription("Voici une page avec quelques outils pour vous aidez !")
+    .addField("*contact", "- Contacter NeyZn")
+    .addField("*donateur", "- Afficher les information sur le grade Donateur")
+    .addField("*teamspeak", "- Afficher l'adresse du TeamSpeak de NeyZn")
+    .addField("*twitter", "- Afficher le Twitter de NeyZn")
+    .addField("*youtube", "- Afficher la chaîne YouTube de NeyZn")
+    .addField("*neyzn", "- Afficher les informations sur le grade YouTuber")
+    message.channel.sendEmbed(embed)
+})
 
 bot.login(process.env.TOKEN);
 
