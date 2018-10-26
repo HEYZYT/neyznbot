@@ -89,7 +89,7 @@ bot.on('message', message => {
 bot.on("message", message => {
     if (message.content === prefix + "aide")
     var embed = new Discord.RichEmbed()
-    .setDescription("Voici une page avec quelques outils pour vous aidez !")
+    .setTitle("Voici une page avec quelques outils pour vous aidez !")
     .addField("*contact", "- Contacter NeyZn")
     .addField("*donateur", "- Afficher les information sur le grade Donateur")
     .addField("*teamspeak", "- Afficher l'adresse du TeamSpeak de NeyZn")
