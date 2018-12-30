@@ -86,17 +86,60 @@ bot.on('message', message => {
   }
 }) 
 
+bot.on("guildMemberAdd", function(member) {
+    member.addRole(member.guild.roles.find("name", "Abonnés"));
+})
+
+bot.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find('name', 'join');
+    if (!channel) return;
+    channel.send(`:point_right: Bienvenue ${member} sur le Discord de **NeyZn** !`);
+  });
+
 bot.on("message", message => {
-    if (message.content === prefix + "aide")
+    if (message.content === prefix + "contact")
     var embed = new Discord.RichEmbed()
-    .setTitle("Voici une page avec quelques outils pour vous aidez !")
-    .addField("*contact", "- Contacter NeyZn")
+    .setDescription("Voici une page avec quelques outils pour vous aidez !")
+    .addField("*mail", "- Contacter NeyZn")
     .addField("*donateur", "- Afficher les information sur le grade Donateur")
     .addField("*teamspeak", "- Afficher l'adresse du TeamSpeak de NeyZn")
     .addField("*twitter", "- Afficher le Twitter de NeyZn")
     .addField("*youtube", "- Afficher les informations sur le grade YouTuber")
     .addField("*neyzn", "- Afficher la chaîne YouTube de NeyZn")
     message.channel.sendEmbed(embed)
+})
+
+bot.on("message", message => {
+    if(message.content === prefix + "mail"){
+        var embed = new Discord.RichEmbed()
+        .addField("Tu peut contacter NeyZn via cette adresse email", "contact.tom.pro@gmail.com")
+        message.channel.sendEmbed(embed)
+    }
+    if(message.content === prefix + "donateur"){
+        var embed = new Discord.RichEmbed()
+        .addField("Tu peut contacter NeyZn via cette adresse email", "contact.tom.pro@gmail.com")
+        message.channel.sendEmbed(embed)        
+    }
+    if(message.content === prefix + "teamspeak"){
+        var embed = new Discord.RichEmbed()
+        .addField("Voici l'adresse du TeamSpeak", "ts.byneyzn.fr")
+        message.channel.sendEmbed(embed)        
+    }   
+    if(message.content === prefix + "twitter"){
+        var embed = new Discord.RichEmbed()
+        .addField("Clic pour avoir le twitter de NeyZn", "[@NeyZnTV](https://twitter.com/NeyZnTV)")
+        message.channel.sendEmbed(embed)        
+    }     
+    if(message.content === prefix + "youtube"){
+        var embed = new Discord.RichEmbed()
+        .addField("Voici les conditions pour obtenir le grade YouTubeur", "500 abonnés")
+        message.channel.sendEmbed(embed)        
+    } 
+    if(message.content === prefix + "neyzn"){
+        var embed = new Discord.RichEmbed()
+        .addField("Voici la fameuse chaine YouTube de NeyZn", "[NeyZn](https://www.youtube.com/channel/UCCVy4k0R3K9ZEbIQLhqBm9w)")
+        message.channel.sendEmbed(embed)        
+    }          
 })
 
 bot.login(process.env.TOKEN);
